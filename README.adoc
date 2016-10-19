@@ -1,0 +1,35 @@
+= Helpers for i3
+:author: Vivien Didelot
+:email: vivien@didelot.org
+:lang: en
+
+
+Bench of handy scripts making your life easier within the http://i3wm.org/[i3 
+window manager].
+
+== Install
+
+Simply clone this repository and add it to your PATH.
+
+== Scripts
+
+=== i3-new-workspace
+
+This helper script jumps to the next numbered workspace available on the 
+current screen. For example, if workspaces 1, 2, and 4 are in use, calling this 
+script will jump to the unused workspace 3 (equivalent to run `workspace number 
+3`). That way, you don't need to look for the next workspace available.
+
+Binding example for your i3 config:
+
+----
+bindsym $mod+n exec i3-new-workspace
+----
+
+== Copyright
+
+Copyright (C) 2016 Vivien Didelot <vivien@didelot.org>
+
+These scripts are distributed under the terms of the GNU General Public License 
+as published by the Free Software Foundation; either version 3 of the License, 
+or (at your option) any later version.
