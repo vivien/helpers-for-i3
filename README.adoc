@@ -26,6 +26,36 @@ Binding example for your i3 config:
 bindsym $mod+n exec i3-new-workspace
 ----
 
+=== i3-smart-resize
+
+This script allows to resize a window depending on its position in the layout.
+For instance, the default i3 bindings in "resize" mode will bind the arrow up
+key to "shrink height" no matter where the window is, but it only makes sense
+when the window is at the top edge, much less so when it is in the bottom edge.
+With this script, pressing up will shrink window's height when it is at the top,
+grow it when it is at the bottom; making the keys more natural.
+
+Usage: i3-smart-resize <direction> [increment]
+
+- direction: "Left", "Right", "Up", or "Down", case insensitive
+- increment: string passed as is to the resize command, default to "10 px or
+  10ppt"
+
+Binding example for your i3 config:
+
+----
+mode "resize" {
+        bindsym Left exec i3-smart-resize "Left" "1 px or 1 ppt"
+        bindsym Right exec i3-smart-resize "Right" "1 px or 1 ppt"
+        bindsym Up exec i3-smart-resize "Up" "1 px or 1 ppt"
+        bindsym Down exec i3-smart-resize "Down" "1 px or 1 ppt"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+----
+
 == Copyright
 
 Copyright (C) 2016 Vivien Didelot <vivien@didelot.org>
